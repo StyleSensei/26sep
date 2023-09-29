@@ -1,3 +1,5 @@
+@charset "UTF-8";
+@import url("https://use.typekit.net/sng2hxr.css");
 /* Box sizing rules */
 *,
 *::before,
@@ -37,11 +39,6 @@ button, input, label {
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
-  text-wrap: balance;
-}
-
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
@@ -78,17 +75,17 @@ textarea:not([rows]) {
   overflow: hidden;
   align-items: center;
   text-align: center;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("/img/resized_images/patrik-2.webp") center top;
+  background: linear-gradient(to right, rgba(22, 22, 23, 0.9), rgba(22, 22, 23, 0.3)), url("/img/resized_images/kärrsön-1920w-landscape.webp") center top;
   background-size: cover;
 }
 .home__name {
   font-size: 5rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
 }
 .home__name--last {
-  color: #ff652f;
+  color: rgb(255, 17, 0);
   font-weight: 700;
 }
 
@@ -100,52 +97,77 @@ textarea:not([rows]) {
   height: 20px;
   width: 28px;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 .menu-btn__burger {
   position: absolute;
-  right: 0;
   top: 0.5rem;
-  width: 28px;
-  height: 3px;
-  background-color: #fff;
-  transition: all 0.5s ease-in-out;
 }
 .menu-btn__burger::before {
   content: "";
   position: absolute;
   top: -8px;
-  width: 28px;
-  height: 3px;
-  background-color: #fff;
-  transition: all 0.5s ease-in-out;
+  width: 18px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: topBunClose reverse ease-in-out 0.32s forwards;
 }
 .menu-btn__burger::after {
   content: "";
   position: absolute;
-  top: 8px;
-  width: 20px;
-  height: 3px;
-  background-color: #fff;
-  transition: all 0.5s ease-in-out;
+  top: 0px;
+  width: 18px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: bottomBunClose reverse ease-in-out 0.32s forwards;
 }
 .menu-btn__burger.open {
-  transform: rotate(720deg);
   background: transparent;
 }
 .menu-btn__burger.open::before {
-  transform: rotate(45deg) translate(5px, 8px);
+  animation: topBunOpen ease-in-out 0.32s forwards;
 }
 .menu-btn__burger.open::after {
-  width: 28px;
-  transform: rotate(-45deg) translate(3px, -7px);
+  animation: bottomBunOpen ease-in-out 0.32s forwards;
 }
 
+@keyframes topBunOpen {
+  50% {
+    transform: translate(0, 8px);
+  }
+  100% {
+    transform: translate(0, 4px) rotate(-45deg);
+  }
+}
+@keyframes bottomBunOpen {
+  50% {
+    transform: translate(0, -8px);
+  }
+  100% {
+    transform: translate(0, -4px) rotate(45deg);
+  }
+}
+@keyframes topBunClose {
+  50% {
+    transform: translate(0, 8px);
+  }
+  100% {
+    transform: translate(0, 4px) rotate(-45deg);
+  }
+}
+@keyframes bottomBunClose {
+  50% {
+    transform: translate(0, -8px);
+  }
+  100% {
+    transform: translate(0, -4px) rotate(45deg);
+  }
+}
 .nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 80vw;
+  width: 100vw;
   opacity: 0.98;
   visibility: hidden;
   margin-top: -1rem;
@@ -162,67 +184,89 @@ textarea:not([rows]) {
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  background: #272727;
+  background: rgb(22, 22, 23);
   list-style-type: none;
   padding-right: 1rem;
   transform: translateX(100%);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 .nav .menu-nav.open {
   transform: translateX(0);
 }
 .nav .menu-nav__item {
-  transform: translateX(100vw);
-  transition: all 0.5s ease-in-out;
+  transform: translateX(50vw);
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 .nav .menu-nav__item.open {
   transform: translateX(0);
 }
 .nav .menu-nav__item.active > a {
-  color: #ff652f;
+  color: rgb(255, 17, 0);
 }
 .nav .menu-nav__link {
   display: inline-block;
   font-size: 2rem;
   text-transform: uppercase;
-  padding: 2rem 0;
+  padding: 1.5rem 1.5rem;
+  margin: 0.5rem;
   font-weight: 300;
-  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav__link::after {
+  content: ">";
+  color: rgb(22, 22, 23);
+  width: 1rem;
+  height: 1rem;
+  right: 5px;
+  position: absolute;
+  visibility: hidden;
+  bottom: 3.2pc;
 }
 .nav .menu-nav__link:hover {
-  color: #ff652f;
+  color: rgb(255, 17, 0);
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+}
+.nav .menu-nav__link:hover::after {
+  visibility: visible;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+  color: rgb(255, 17, 0);
 }
 
-.menu-nav__item:nth-child(1) {
-  transition-delay: 0.25s;
+@media screen and (min-width: 768px) {
+  .nav .menu-nav {
+    height: 40px;
+    flex-flow: row;
+    transform: translateX(0);
+  }
+  .nav .menu-nav__item {
+    transform: translateX(0);
+  }
+  .nav .menu-nav__link {
+    font-size: 0.75rem;
+    text-transform: none;
+  }
+  .nav .menu-nav__link::after {
+    bottom: unset;
+  }
+  .menu-btn {
+    display: none;
+  }
 }
-
-.menu-nav__item:nth-child(2) {
-  transition-delay: 0.35s;
-}
-
-.menu-nav__item:nth-child(3) {
-  transition-delay: 0.45s;
-}
-
-.menu-nav__item:nth-child(4) {
-  transition-delay: 0.55s;
-}
-
 body {
-  background: #272727;
-  color: #fff;
+  background: rgb(22, 22, 23);
+  color: rgba(255, 255, 255, 0.8);
   height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: din-214, sofia-pro, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1;
 }
 
 h1, h2, h3 {
-  font-weight: 400;
+  font-family: adelle-sans, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 }
 
@@ -244,10 +288,10 @@ main .social-icons {
 }
 main .social-icons a {
   padding: 0.4rem;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 main .social-icons a:hover {
-  color: #ff652f;
+  color: rgb(255, 17, 0);
 }
 
 footer {
@@ -257,5 +301,5 @@ footer {
   right: 1rem;
   text-align: right;
   padding: 1rem;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
 }/*# sourceMappingURL=style.css.map */

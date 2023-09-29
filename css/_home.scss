@@ -1,6 +1,7 @@
 @use 'config';
 .home {
     height: 100%;
+
     padding-top: 40vh;
     overflow: hidden;
     align-items: center;
@@ -11,7 +12,7 @@
             rgba(config.$primary-color, .9),
             rgba(config.$primary-color, .3)
         ),
-    url('/img/resized_images/patrik-2.webp') center top;
+    url('/img/resized_images/kärrsön-1920w-landscape.webp') center top;
     background-size: cover;
 
     &__name {

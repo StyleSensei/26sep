@@ -1,15 +1,20 @@
 @use 'reset';
 
-$primary-color:#272727;
-$secondary-color:#ff652f;
+$primary-color:rgba(22, 22, 23, 1);
+$secondary-color:rgb(255, 17, 0);
+
+@mixin transition-cubBez {
+    transition: all .32s cubic-bezier(.4,0,.6,1);
+}
+
 
 @mixin transition-ease {
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 @function setTextColor($color) {
     @if (lightness($color) > 40%){
-        @return #000;
+        @return rgba(0,0,0,.8);
     } @else {
-        @return #fff;
+        @return rgba(255,255,255,.8);
     }
 }
