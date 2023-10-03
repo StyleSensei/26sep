@@ -285,14 +285,22 @@ textarea:not([rows]) {
     order: 1;
   }
 }
+.contact__home__form input:focus,
+.contact__home__form textarea:focus {
+  outline: lightblue 2px solid;
+}
 .contact__home__form input {
-  height: 40px;
+  height: 2.2rem;
+}
+.contact__home__form label {
+  margin-bottom: 0.5rem;
 }
 .contact__home__form label,
 .contact__home__form input {
   display: flex;
 }
-.contact__home__form legend, .contact__home__form input {
+.contact__home__form legend,
+.contact__home__form input {
   margin-bottom: 0.8rem;
 }
 .contact__home .form__message {
@@ -315,19 +323,36 @@ textarea:not([rows]) {
 }
 .contact__home button {
   display: flex;
+  position: relative;
   order: 3;
   height: 40px;
   text-align: center;
   justify-items: center;
   align-items: center;
   border-radius: 5px;
-  background-color: lightblue;
+  background-color: rgb(22, 22, 23);
   color: white;
   border: solid white 1px;
-  transition: all 0.3s ease-in-out;
+}
+.contact__home button::after {
+  content: ">";
+  color: rgb(22, 22, 23);
+  width: 1rem;
+  height: 1rem;
+  right: 70%;
+  position: absolute;
+  visibility: hidden;
+  bottom: 0.8pc;
 }
 .contact__home button:hover {
-  background-color: rgba(0, 0, 255, 0.8);
+  color: lightblue;
+  border: 2px solid lightblue;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+}
+.contact__home button:hover::after {
+  visibility: visible;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+  color: lightblue;
 }
 
 body {

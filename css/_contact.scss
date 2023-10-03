@@ -1,5 +1,6 @@
 @use "home";
 @use "config";
+@use "mixins";
 
 .contact__home {
   @extend .start__home;
@@ -18,7 +19,6 @@
     justify-content: space-between;
     height: 450px;
     max-width: 75vw;
-   
 
     @media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
       height: unset;
@@ -30,27 +30,36 @@
       order: 1;
     }
 
+    & input,
+    textarea {
+      &:focus {
+        // outline-color: green;
+        // outline-offset: 10px;
+        // outline-style: green;
+        outline: config.$secondary-color 2px solid;
+      }
+    }
     & input {
-    height:40px;  
-    // border-radius: 5px;
+      height: 2.2rem;
+    }
 
+    & label {
+      margin-bottom: 0.5rem;
     }
 
     & label,
     input {
       display: flex;
-    // margin-bottom: 1rem;  
-
+      // margin-bottom: 1rem;
     }
-    & legend, input {
-        margin-bottom: .8rem;  
-
+    & legend,
+    input {
+      margin-bottom: 0.8rem;
     }
   }
-  .form__message{
-    order:2
+  .form__message {
+    order: 2;
   }
-
 
   @media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
     .form__message {
@@ -61,16 +70,12 @@
       & > textarea {
         flex: 1;
         min-width: 10rem;
-
       }
     }
     label {
       // flex-basis: 40%;
     }
-    input {
-    //   flex-basis: 100%;
-    // width: 100%;
-    }
+
     legend {
       flex-basis: 100%;
     }
@@ -78,18 +83,22 @@
 
   button {
     display: flex;
-    order:3;
+    position: relative;
+    order: 3;
     height: 40px;
     text-align: center;
     justify-items: center;
     align-items: center;
     border-radius: 5px;
-    background-color: lightblue;
+    background-color: config.$primary-color;
     color: white;
     border: solid white 1px;
-    @include config.transition-ease;
-    &:hover {
-      background-color: rgba(0, 0, 255, 0.8);
-    }
+    @include mixins.button;
+
+    // @include config.transition-ease;
+
+    // &:hover {
+    //   background-color: rgba(0, 0, 255, 0.8);
+    // }
   }
 }
