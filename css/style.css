@@ -57,6 +57,7 @@ picture {
 input, button,
 textarea, select {
   font: inherit;
+  resize: none;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */
@@ -69,24 +70,29 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-.home {
+.start__home, .contact__home {
   height: 100%;
-  padding-top: 40vh;
+  padding-top: 20vh;
   overflow: hidden;
   align-items: center;
   text-align: center;
   background: linear-gradient(to right, rgba(22, 22, 23, 0.9), rgba(22, 22, 23, 0.3)), url("/img/resized_images/kärrsön-1920w-landscape.webp") center top;
   background-size: cover;
 }
-.home__name {
+.start__home__name {
+  margin: 0;
   font-size: 5rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.8);
 }
-.home__name--last {
-  color: rgb(255, 17, 0);
+.start__home__name .home__name__last {
+  color: lightblue;
   font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+.start__home__name .home__name__last:hover {
+  color: lightblue;
 }
 
 .menu-btn {
@@ -186,12 +192,12 @@ textarea:not([rows]) {
   overflow: hidden;
   background: rgb(22, 22, 23);
   list-style-type: none;
-  padding-right: 1rem;
   transform: translateX(100%);
   transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 .nav .menu-nav.open {
   transform: translateX(0);
+  padding-left: 0;
 }
 .nav .menu-nav__item {
   transform: translateX(50vw);
@@ -201,7 +207,7 @@ textarea:not([rows]) {
   transform: translateX(0);
 }
 .nav .menu-nav__item.active > a {
-  color: rgb(255, 17, 0);
+  color: lightblue;
 }
 .nav .menu-nav__link {
   display: inline-block;
@@ -222,13 +228,13 @@ textarea:not([rows]) {
   bottom: 3.2pc;
 }
 .nav .menu-nav__link:hover {
-  color: rgb(255, 17, 0);
+  color: lightblue;
   transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 .nav .menu-nav__link:hover::after {
   visibility: visible;
   transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
-  color: rgb(255, 17, 0);
+  color: lightblue;
 }
 
 @media screen and (min-width: 768px) {
@@ -251,6 +257,79 @@ textarea:not([rows]) {
     display: none;
   }
 }
+.contact__home {
+  padding-top: unset;
+}
+.contact__home__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow-y: auto;
+}
+.contact__home__form {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 450px;
+  max-width: 75vw;
+}
+@media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
+  .contact__home__form {
+    height: unset;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 70vh;
+    flex: 1;
+    order: 1;
+  }
+}
+.contact__home__form input {
+  height: 40px;
+}
+.contact__home__form label,
+.contact__home__form input {
+  display: flex;
+}
+.contact__home__form legend, .contact__home__form input {
+  margin-bottom: 0.8rem;
+}
+.contact__home .form__message {
+  order: 2;
+}
+@media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
+  .contact__home .form__message {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    align-self: flex-start;
+  }
+  .contact__home .form__message > textarea {
+    flex: 1;
+    min-width: 10rem;
+  }
+  .contact__home legend {
+    flex-basis: 100%;
+  }
+}
+.contact__home button {
+  display: flex;
+  order: 3;
+  height: 40px;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: lightblue;
+  color: white;
+  border: solid white 1px;
+  transition: all 0.3s ease-in-out;
+}
+.contact__home button:hover {
+  background-color: rgba(0, 0, 255, 0.8);
+}
+
 body {
   background: rgb(22, 22, 23);
   color: rgba(255, 255, 255, 0.8);
@@ -281,25 +360,36 @@ main {
   height: 100%;
   width: 100%;
 }
-main .social-icons {
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-}
-main .social-icons a {
-  padding: 0.4rem;
-  transition: all 0.3s ease-in-out;
-}
-main .social-icons a:hover {
-  color: rgb(255, 17, 0);
-}
 
 footer {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  height: 32px;
+  align-items: center;
+  justify-content: space-between;
   font-size: 1rem;
   position: fixed;
   bottom: 0.4rem;
-  right: 1rem;
   text-align: right;
   padding: 1rem;
   color: rgba(255, 255, 255, 0.8);
+}
+footer .social-icons {
+  position: relative;
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  width: 10rem;
+}
+footer .social-icons a {
+  transition: all 0.3s ease-in-out;
+}
+footer .social-icons a:hover {
+  color: lightblue;
+}
+footer .copy {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
 }/*# sourceMappingURL=style.css.map */

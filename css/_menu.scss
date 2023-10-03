@@ -93,6 +93,7 @@
 
   &.open {
     visibility: visible;
+    
   }
 
   .menu-nav {
@@ -104,12 +105,13 @@
     overflow: hidden;
     background: config.$primary-color;
     list-style-type: none;
-    padding-right: 1rem;
+    
     transform: translateX(100%);
     @include config.transition-cubBez;
 
     &.open {
       transform: translateX(0);
+     padding-left: 0;
     }
 
     &__item {

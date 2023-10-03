@@ -1,0 +1,95 @@
+@use "home";
+@use "config";
+
+.contact__home {
+  @extend .start__home;
+  padding-top: unset;
+  &__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  &__form {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 450px;
+    max-width: 75vw;
+   
+
+    @media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
+      height: unset;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      height: 70vh;
+      flex: 1;
+      order: 1;
+    }
+
+    & input {
+    height:40px;  
+    // border-radius: 5px;
+
+    }
+
+    & label,
+    input {
+      display: flex;
+    // margin-bottom: 1rem;  
+
+    }
+    & legend, input {
+        margin-bottom: .8rem;  
+
+    }
+  }
+  .form__message{
+    order:2
+  }
+
+
+  @media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
+    .form__message {
+      display: flex;
+      flex-direction: column;
+      order: 2;
+      align-self: flex-start;
+      & > textarea {
+        flex: 1;
+        min-width: 10rem;
+
+      }
+    }
+    label {
+      // flex-basis: 40%;
+    }
+    input {
+    //   flex-basis: 100%;
+    // width: 100%;
+    }
+    legend {
+      flex-basis: 100%;
+    }
+  }
+
+  button {
+    display: flex;
+    order:3;
+    height: 40px;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: lightblue;
+    color: white;
+    border: solid white 1px;
+    @include config.transition-ease;
+    &:hover {
+      background-color: rgba(0, 0, 255, 0.8);
+    }
+  }
+}

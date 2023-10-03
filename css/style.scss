@@ -1,6 +1,7 @@
 @use 'config';
 @use 'home';
 @use 'menu';
+@use 'contact';
 @import url("https://use.typekit.net/sng2hxr.css");
 
 
@@ -34,13 +35,30 @@ main{
     height: 100%;
     width: 100%;
 
+   
+}
+footer{
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    height: 32px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    position: fixed;
+    bottom: .4rem;
+    text-align: right;
+    padding: 1rem;
+    color: config.setTextColor(config.$primary-color);
     .social-icons{
-        position: fixed;
-        bottom: 1rem;
-        left: 1rem;
+        position: relative;
+        display: flex;
+        align-content: flex-start;
+        justify-content: space-between;
+        width: 10rem;
 
         a {
-            padding: .4rem;
+            // padding: .4rem;
             @include config.transition-ease;
 
             &:hover{
@@ -48,13 +66,10 @@ main{
             }
         }
     }
-}
-footer{
-    font-size: 1rem;
-    position: fixed;
-    bottom: .4rem;
-    right: 1rem;
-    text-align: right;
-    padding: 1rem;
-    color: config.setTextColor(config.$primary-color);
+    .copy{
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        // align-items: flex-end;
+    }
 }
