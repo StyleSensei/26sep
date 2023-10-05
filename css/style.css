@@ -11,6 +11,7 @@
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
 }
 
@@ -70,7 +71,7 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-.start__home, .contact__home {
+.start__home, .about__home, .contact__home {
   height: 100%;
   padding-top: 20vh;
   overflow: hidden;
@@ -285,12 +286,22 @@ textarea:not([rows]) {
     order: 1;
   }
 }
+.contact__home__form input,
+.contact__home__form textarea,
+.contact__home__form button {
+  border-radius: 12px;
+  border-style: none;
+  line-height: 1.23;
+}
 .contact__home__form input:focus,
-.contact__home__form textarea:focus {
+.contact__home__form textarea:focus,
+.contact__home__form button:focus {
   outline: lightblue 2px solid;
 }
-.contact__home__form input {
-  height: 2.2rem;
+.contact__home__form input, .contact__home__form textarea {
+  height: 3.29rem;
+  width: 100%;
+  padding: 1.558rem 0.94rem 0;
 }
 .contact__home__form label {
   margin-bottom: 0.5rem;
@@ -305,6 +316,30 @@ textarea:not([rows]) {
 }
 .contact__home .form__message {
   order: 2;
+}
+.contact__home textarea {
+  height: unset;
+  padding-top: 1.5rem;
+}
+.contact__home .form__textbox {
+  position: relative;
+}
+.contact__home .form__textbox .input__label {
+  position: absolute;
+  top: 1.058rem;
+  left: 1rem;
+  color: rgb(22, 22, 23);
+  line-height: 1.23;
+  transition-timing-function: ease-in;
+  transition-duration: 0.125s;
+  font-size: 17px;
+  letter-spacing: -0.022rem;
+}
+.contact__home .form__textbox input:focus ~ .input__label, .contact__home input:valid ~ .input__label, .contact__home textarea:focus ~ .input__label {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: -0.01rem;
+  top: 0.588rem;
 }
 @media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
   .contact__home .form__message {
@@ -321,15 +356,17 @@ textarea:not([rows]) {
     flex-basis: 100%;
   }
 }
-.contact__home button {
+.contact__home .buttoncontainer {
   display: flex;
-  position: relative;
   order: 3;
-  height: 40px;
-  text-align: center;
+}
+.contact__home button {
+  position: relative;
+  height: 3.29rem;
+  width: 100%;
   justify-items: center;
+  text-align: center;
   align-items: center;
-  border-radius: 5px;
   background-color: rgb(22, 22, 23);
   color: white;
   border: solid white 1px;
@@ -339,10 +376,10 @@ textarea:not([rows]) {
   color: rgb(22, 22, 23);
   width: 1rem;
   height: 1rem;
-  right: 70%;
+  right: 33%;
   position: absolute;
   visibility: hidden;
-  bottom: 0.8pc;
+  bottom: 1.2pc;
 }
 .contact__home button:hover {
   color: lightblue;
@@ -353,6 +390,27 @@ textarea:not([rows]) {
   visibility: visible;
   transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
   color: lightblue;
+}
+
+.about__home {
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.about__home__section {
+  display: flex;
+  padding-top: 50vh;
+  width: 62rem;
+}
+.about__home__section h2 {
+  font-size: 5rem;
+}
+
+#about__home__section h2 span {
+  color: #161617;
+  display: inline-block;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 body {

@@ -1,0 +1,31 @@
+@use "home";
+@use "config";
+@use "mixins";
+
+
+$initialColor: #161617;
+$changedColor: #add8e6;
+
+.about__home {
+    @extend .start__home;
+    height: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    &__section {
+        display: flex;
+        padding-top:50vh;
+       
+        width:62rem;
+        & h2 {
+            // color: $initialColor;
+            font-size: 5rem;
+            
+        }
+    }
+}
+#about__home__section h2 span {
+    color: $initialColor;
+    display: inline-block;
+    @include config.transition-cubBez;
+}

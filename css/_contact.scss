@@ -31,16 +31,20 @@
     }
 
     & input,
-    textarea {
+    textarea,
+    button {
+      border-radius: 12px;
+      border-style: none;
+      line-height: 1.23;
       &:focus {
-        // outline-color: green;
-        // outline-offset: 10px;
-        // outline-style: green;
         outline: config.$secondary-color 2px solid;
       }
     }
-    & input {
-      height: 2.2rem;
+
+    & input, textarea {
+      height: 3.29rem;
+      width: 100%;
+      padding: 1.558rem .94rem 0;
     }
 
     & label {
@@ -60,7 +64,32 @@
   .form__message {
     order: 2;
   }
+  textarea {
+    height: unset;
+    padding-top: 1.5rem;
+  }
+  .form__textbox{
+    position: relative;
 
+    .input__label {
+      position: absolute;
+      top:1.058rem;
+      left: 1rem;
+      color: config.$primary-color;
+      line-height: 1.23;
+      transition-timing-function: ease-in;
+      transition-duration: .125s;
+      font-size: 17px;
+      letter-spacing: -.022rem;
+      
+    }
+  }
+  .form__textbox input:focus~.input__label, input:valid~.input__label, textarea:focus~.input__label {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: -.01rem;
+    top: .588rem;
+  }
   @media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
     .form__message {
       display: flex;
@@ -80,25 +109,23 @@
       flex-basis: 100%;
     }
   }
+.buttoncontainer {
+  display: flex;
+  order: 3;
+  
+}
 
   button {
-    display: flex;
     position: relative;
-    order: 3;
-    height: 40px;
-    text-align: center;
+    
+    height: 3.29rem;
+    width: 100%;
     justify-items: center;
+    text-align: center;
     align-items: center;
-    border-radius: 5px;
     background-color: config.$primary-color;
     color: white;
     border: solid white 1px;
     @include mixins.button;
-
-    // @include config.transition-ease;
-
-    // &:hover {
-    //   background-color: rgba(0, 0, 255, 0.8);
-    // }
   }
 }
