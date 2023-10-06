@@ -106,18 +106,32 @@
     overflow: hidden;
     background: config.$primary-color;
     list-style-type: none;
-    
-    transform: translateX(100%);
+    // padding: 10%;
+    // gap: 3%;
+  
+    transform: translateX(100%) ;
     @include config.transition-cubBez;
+    // @media screen 
+    // and (max-width:600px)
+    // and (orientation:landscape)
+    //  {
+    //   flex-flow: row wrap;
+    //   font-size: 1rem;
+
+    // }
 
     &.open {
       transform: translateX(0);
      padding-left: 0;
+ 
     }
 
     &__item {
       transform: translateX(50vw);
       @include config.transition-cubBez;
+      // outline: black 2px solid;
+      // @include mixins.button;
+      // height: calc(3.29 * mixins.$fontSizeMenuLinkMobile);
 
       &.open {
         transform: translateX(0);
@@ -129,22 +143,34 @@
     }
     
     &__link {
+      
       @include mixins.link;
+    //   @media screen 
+    // and (max-width:600px)
+    // and (orientation:landscape){
+    //   font-size: mixins.$fontSizeMenuLinkMobile--landscape;
+    // }
+      
+      
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen 
+and (min-width: 600px){
   .nav .menu-nav {
     height: 40px;
     flex-flow: row;
     transform: translateX(0);
+    transition: none;
+
     &__item {
       transform: translateX(0);
     }
     &__link {
-      font-size: 0.75rem;
+      font-size: mixins.$fontSizeMenuLinkDesktop;
       text-transform: none;
+      transition: none;
       // &:hover{
       //   border: solid config.$primary-color 2px;
       // }

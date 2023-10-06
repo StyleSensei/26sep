@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="css/style.css" >
     <!-- <link rel="stylesheet" href="css/hamburger.css" /> -->
     <script
       src="https://kit.fontawesome.com/652c4c919a.js"
@@ -37,10 +37,11 @@
       <!-- </div> -->
     </header>
       <main class="contact__home">
-        <section class="contact__home__section">
+        <div class="contact__home__section">
         <fieldset class="home__fieldset">
+          <legend>Contact me</legend>
             <form method="post" action="https://httpbin.org/post" class="contact__home__form">
-                <legend>Contact me</legend>
+                
                 <div class="form__message form__textbox">
                   <!-- <label for="textarea" class="form--textarea">Send me a message</label> -->
                   <textarea name="textarea" id="textarea" cols="30" rows="6" class="form--textarea"></textarea>
@@ -54,12 +55,12 @@
                 </div>
                 <!-- <label for="last-name">Last name</label> -->
                 <div class="form__textbox">
-                <input type="text" id="lastname" name="lastname" autofocus required>
+                <input type="text" id="lastname" name="lastname"  required>
                 <span class="input__label">Surname</span>
               </div>
                 <!-- <label for="email">Email</label> -->
                 <div class="form__textbox">
-                <input type="email" id="mail" name="mail" autofocus required>
+                <input type="email" id="mail" name="mail" required>
                 <span class="input__label">Email adress</span>
               </div>
                 </div>
@@ -69,8 +70,8 @@
               </form>
             </fieldset>
         
-      </section>
-    
+      </div>
+    </main>
       <footer> <div class="social-icons">
         <a href="#!">
           <i class="fab fa-twitter fa-2x"></i>
@@ -85,7 +86,6 @@
           <i class="fab fa-github fa-2x"></i>
         </a>
       </div><div class="copy"> &copy; Copyright 2023</div></footer>
-      </section>
-    </main>
+   
   </body>
 </html>

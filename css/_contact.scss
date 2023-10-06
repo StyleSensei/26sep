@@ -1,6 +1,7 @@
 @use "home";
 @use "config";
 @use "mixins";
+// @use 'style';
 
 .contact__home {
   @extend .start__home;
@@ -90,7 +91,12 @@
     letter-spacing: -.01rem;
     top: .588rem;
   }
-  @media only screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 812px) {
+  @media only screen 
+  and (orientation: landscape) 
+  // and (min-device-width: 375px) 
+  // and (max-device-width: 812px)
+  // and (max-width:812px)
+   {
     .form__message {
       display: flex;
       flex-direction: column;
@@ -99,11 +105,10 @@
       & > textarea {
         flex: 1;
         min-width: 10rem;
+        padding: 0;
       }
     }
-    label {
-      // flex-basis: 40%;
-    }
+
 
     legend {
       flex-basis: 100%;
@@ -116,16 +121,16 @@
 }
 
   button {
-    position: relative;
+    // position: relative;
     
-    height: 3.29rem;
-    width: 100%;
-    justify-items: center;
-    text-align: center;
-    align-items: center;
-    background-color: config.$primary-color;
-    color: white;
-    border: solid white 1px;
+    // height: 3.29rem;
+    // width: 100%;
+    // justify-items: center;
+    // text-align: center;
+    // align-items: center;
+    // background-color: config.$primary-color;
+    // color: white;
+    // border: solid white 1px;
     @include mixins.button;
   }
 }

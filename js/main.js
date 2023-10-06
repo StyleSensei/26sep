@@ -8,7 +8,7 @@ let showMenu = false;
 
 // Funktion för att visa menyn om innerWidth är över 768px
 function showMenuIfWide() {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 600) {
         hamburger.classList.add('open');
         nav.classList.add('open');
         menuNav.classList.add('open');

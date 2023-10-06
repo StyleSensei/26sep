@@ -12,6 +12,7 @@ $changedColor: #add8e6;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    position: relative;
     &__section {
         display: flex;
         padding-top:50vh;
@@ -28,4 +29,15 @@ $changedColor: #add8e6;
     color: $initialColor;
     display: inline-block;
     @include config.transition-cubBez;
+}
+.me {
+    background: 
+    url(/img/resized_images/patrik-2.webp) center top;
+    background-size: contain;
+    display: flex;
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    
 }
