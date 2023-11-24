@@ -50,3 +50,27 @@ function toggleMenu() {
 
 // Lyssna på ändringar i fönstrets storlek och visa menyn om innerWidth är över 768px
 window.addEventListener('resize', showMenuIfWide);
+
+// const inputLabel = document.getElementsByClassName("input__label");
+// const inputField = document.querySelector("input");
+// inputLabel.addEventListener("click", (e) => {
+//     e.target.parentElement.focus();
+    
+
+// })
+const inputField = document.querySelectorAll('input');
+inputField.classList.add('input');
+
+document.addEventListener("DOMContentLoaded", (e) => {
+    const inputLabel = document.querySelectorAll(".input__label");
+  
+    inputLabel.forEach((el) => {
+      el.addEventListener("mouseover", (e) => {
+        e.target.closest(".input").classList.add("hovered");
+      });
+      el.addEventListener("mouseout", (e) => {
+        e.target.closest(".input").classList.remove("hovered");
+      });
+    });
+  });
+  console.log("inputLabel")

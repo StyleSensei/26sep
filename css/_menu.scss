@@ -109,7 +109,7 @@
     // padding: 10%;
     // gap: 3%;
   
-    transform: translateX(100%) ;
+    transform: translateY(-100%) ;
     @include config.transition-cubBez;
     // @media screen 
     // and (max-width:600px)
@@ -121,20 +121,20 @@
     // }
 
     &.open {
-      transform: translateX(0);
+      transform: translateY(0);
      padding-left: 0;
  
     }
 
     &__item {
-      transform: translateX(50vw);
+      transform: translateY(-100%);
       @include config.transition-cubBez;
       // outline: black 2px solid;
       // @include mixins.button;
       // height: calc(3.29 * mixins.$fontSizeMenuLinkMobile);
 
       &.open {
-        transform: translateX(0);
+        transform: translate(0);
       }
 
       &.active > a {

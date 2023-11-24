@@ -30,14 +30,28 @@ $changedColor: #add8e6;
     display: inline-block;
     @include config.transition-cubBez;
 }
-.me {
-    background: 
-    url(/img/resized_images/patrik-2.webp) center top;
-    background-size: contain;
-    display: flex;
-    position: relative;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
+// .me {
+//     background: 
+//     #c7c7c7;
+//     background-size: contain;
+//     display: flex;
+//     position: relative;
+//     width: 450px;
+//     height: 450px;
+//     border-radius: 50%;
+//     &__nobg {
+//         content: "";
+//         position: absolute;
+//         display: flex;
+//         background:
+//         url(/img/resized_images/patrik-2-nobg.webp) center top;
+//         background-size: contain;
+//         width: 450px;
+//         height: 450px;
+//         top: 10%;
+//         right: 10%;
+//         border-radius: 50%;
+//     }
+
     
-}
+// }
